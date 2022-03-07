@@ -1,28 +1,11 @@
+const express = require("express");
+const {connection } =  require("./db/db");
+require("dotenv").config();
 
-const {Client,  Pool}  = require('pg');
+const app =  express();
 
-
-const dbConnection = {
-   user: "postgres",
-   host:"localhost",
-   database:"postgres",
-   password: 'dbadmin2022',
-   port: 5432
-};
-
-const pool = new Pool(dbConnection);
-
-
-const connection = async()=>{
-    try {
-        const res = await pool.query('SELECT NOW()')
-        console.log("Connection succesfuly" + res);
-            // pool.end();
-        
-    } catch (error) {
-        console.log("Ha ocurrido un error: " + error);
-    }
-}
-
+app.listen(process.env.PORT, ()=>{
+    console.log("el servidor esta corriendo en el puerto:" + process.env.PORT)
+});
 
 connection();
