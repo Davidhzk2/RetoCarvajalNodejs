@@ -1,9 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/api/registerProdcut", async(req, res) =>{
+const Productos = require("../models/products");
+
+router.get("/listarProductos", async(req, res) =>{
+    const result = await Productos.readAll();
+    console.log(result);
+});
+
+router.post("/resgitrarProducto", async(req, res) =>{
     if(!req.body.nombre || !req.body.precio || !req.body.cantidadStock)
-        return res.status(400).send("Data imcompleta");
-})
+        return res.status(400).send("Data incompleta");
+
+
+
+    
+});
 
 module.exports = router;
