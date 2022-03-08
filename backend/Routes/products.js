@@ -5,8 +5,9 @@ const Productos = require("../models/products");
 
 router.get("/listarProductos", async(req, res) =>{
     const result = await Productos.readAll();
-    console.log(result);
+    return res.status(200).send(result);
 });
+
 
 router.post("/resgitrarProducto", async(req, res) =>{
     if(!req.body.nombre || !req.body.precio || !req.body.cantidadStock)
