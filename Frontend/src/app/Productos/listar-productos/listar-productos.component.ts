@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {ProductoService} from '../../services/producto.service';
 
 @Component({
   selector: 'app-listar-productos',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarProductosComponent implements OnInit {
 
-  constructor() { }
+  productData:any;
+  successMessage: String;
+  errorMessage: String;
+
+  constructor(private  product: ProductoService, private router:Router) {
+    this.productData = {};
+    this.successMessage = '';
+    this.errorMessage = '';
+   }
 
   ngOnInit(): void {
+    console.log('Cargando prodcutos');
+    
   }
 
 }
