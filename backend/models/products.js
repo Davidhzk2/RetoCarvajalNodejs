@@ -1,11 +1,31 @@
 const {Pool, Client} = require("pg");
+const {dbConnection} = require("../db/db");
 
-const pool = new Pool()
+const pool = new Pool(dbConnection);
 
 
 const readAll = async () =>{
-    const result = await pool.query("SELECT * FROM Productos");
-    return result
+    try {
+        const result = await pool.query("SELECT * FROM Productos");
+        return result
+        
+    } catch (error) {
+        console.log("Ha ocurrido un error: " + error);
+        return result = error
+        
+    }
 }
 
-module.exports  = {readAll}
+const saveProduct = async (data) =>{
+
+    try {
+        const result = await pool.query("INSERT INTO productos(nombre, precio, cantidadstock) VALUES (?, ?, ?),"[data.nombre, data.precio, data.cantidad]);
+        return result;
+    } catch (error) {
+        console.log("!"+ error);
+        return result = error;
+        
+    }
+}
+
+module.exports  = {readAll, saveProduct}

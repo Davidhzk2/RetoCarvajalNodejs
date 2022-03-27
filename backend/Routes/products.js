@@ -13,6 +13,16 @@ router.post("/resgitrarProducto", async(req, res) =>{
     if(!req.body.nombre || !req.body.precio || !req.body.cantidadStock)
         return res.status(400).send("Data incompleta");
 
+    const dataProduct = {
+        nombre:req.body.nombre,
+        precio:req.body.precio,
+        cantidad: req.body.cantidadStock
+    }  
+    const result = await Productos.saveProduct(dataProduct);
+    if (!result)
+        return res.status(400).send(result);
+        
+    return res.status(200).send(result);
 
 
     

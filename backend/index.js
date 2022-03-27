@@ -1,10 +1,7 @@
 const express = require("express");
-const {connection } =  require("./db/db");
+const {connection} =  require("./db/db");
 require("dotenv").config();
 const Product = require("./Routes/products");
-
-
-// http://localhost:8000/api/products/registrarProducto
 
 const app =  express();
 
