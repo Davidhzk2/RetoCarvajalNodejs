@@ -27,7 +27,8 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [ProductoService],
   bootstrap: [AppComponent]

@@ -7,17 +7,17 @@ const pool = new Pool(dbConnection);
 const readAll = async () =>{
     try {
         const result = await pool.query("SELECT * FROM Productos");
-        return result
+        if (!result) return
+        return result.rows;
         
     } catch (error) {
         console.log("Ha ocurrido un error: " + error);
-        return result = error
+        return result = error;
         
     }
 }
 
 const saveProduct = async (data) =>{
-
     try {
         const result = await pool.query("INSERT INTO productos(nombre, precio, cantidadstock) VALUES (?, ?, ?),"[data.nombre, data.precio, data.cantidad]);
         return result;

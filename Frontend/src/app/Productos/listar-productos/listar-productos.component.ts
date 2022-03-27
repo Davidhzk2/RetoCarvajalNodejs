@@ -20,8 +20,21 @@ export class ListarProductosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log('Cargando prodcutos');
+  // this.successMessage = 'Lista de productos';
+  this.product.listarProductos().subscribe(
+    (res)=>{
+      console.log(res);
+    },
+    (err)=>{
+      console.log(err.error);
+      this.errorMessage = err.error;
+      
+    }
+  )
     
+  }
+  closeX(){
+
   }
 
 }

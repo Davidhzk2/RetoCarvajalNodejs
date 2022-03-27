@@ -22,7 +22,7 @@ router.post("/resgitrarProducto", async(req, res) =>{
     if (!result)
         return res.status(400).send(result);
         
-    return res.status(200).send(result);
+    return res.status(200).send(result.comand);
 
 
     

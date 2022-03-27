@@ -1,1 +1,23 @@
-<p>listar-productos works!</p>
+<div class="col-12 col-lg-12" *ngIf="successMessage">
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <div class="alert-message">
+            {{ successMessage }}
+        </div>
+        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">X</span>
+        </button>
+    </div>
+</div>
+<div class="col-12 col-lg-12" *ngIf="errorMessage">
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <div class="alert-message">
+            {{ errorMessage }}
+        </div>
+        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">X</span>
+        </button>
+    </div>
+</div>
+<h1>{{successMessage}}</h1>
+
+
