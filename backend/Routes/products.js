@@ -9,8 +9,22 @@ router.get("/listarProductos", async(req, res) =>{
     return res.status(200).send(result);
 });
 
+router.get("/listarporId/:id", async(req, res) =>{
+    const id = req.params.id;
+    // return res.send(id);
+     const result = await Productos.readById(id);
+    return res.status(200).send(result);
+});
+
 router.get("/cantidadProductos", async(req, res) =>{
     const result = await Productos.readCount();
+    return res.status(200).send(result);
+});
+
+router.get("/buscarProductos/:nombre", async(req, res)=>{
+    const nombre = req.params.nombre;
+    const result = await Productos.searchBy(nombre);
+    // if(!result.rows) return res.status(400).send(result);
     return res.status(200).send(result);
 });
 
@@ -21,7 +35,7 @@ router.post("/resgitrarProducto", async(req, res) =>{
     const dataProduct = {
         nombre:req.body.nombre,
         precio:req.body.precio,
-        cantidad: req.body.cantidadStock
+        cantidadStock: req.body.cantidadStock
     }  
     const result = await Productos.saveProduct(dataProduct);
     if (!result)
