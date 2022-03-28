@@ -1,10 +1,10 @@
 # RetoCarvajalNodejs
 ### Información 
 Implementación del reto Carvajal 4.0 con NodeJS, Angular y PostgreSQL
-<h3>Instalacion</h3>
-<h5>Base de datos</h5>
+### Instalacion
+#### Base de datos
 Para la instalación de la base de datos  debemos tener PostgreSQL
-<li>Crear una base de datos con el nombre de RetoCarvajal</li>
+- Crear una base de datos con el nombre de RetoCarvajal
  ` create database RetoCarvajal `
  
 <li>Utilizar la base de datos RetoCarbajal.</li>
@@ -19,4 +19,4 @@ Para la instalación de la base de datos  debemos tener PostgreSQL
 <h5>Node js </h5>
 Tener un editor de codigo o una consola de comandos que nos permita trabajar con los los comandos de npm y nodejs.
 <li>ubicarse en la carpeta backend</li>
-<li>Ejecutar el comando ` npm i ` para instalar las librerias utilizadas por el proyecto.<li>
+<li>Ejecutar el comando ` npm i ` para instalar las librerias utilizadas por el proyecto.</li>
