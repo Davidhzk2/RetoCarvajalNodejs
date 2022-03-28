@@ -12,7 +12,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {ProductoService} from './services/producto.service';
 
 // Tools
-import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar'
+import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card'
 
 // 
 import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -28,6 +29,7 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
     AppRoutingModule,
     NoopAnimationsModule,
     MatToolbarModule,
+    MatCardModule,
     HttpClientModule
   ],
   providers: [ProductoService],
