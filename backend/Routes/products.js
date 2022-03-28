@@ -3,11 +3,16 @@ const router = express.Router();
 
 const Productos = require("../models/products");
 
+// Metodos
 router.get("/listarProductos", async(req, res) =>{
     const result = await Productos.readAll();
     return res.status(200).send(result);
 });
 
+router.get("/cantidadProductos", async(req, res) =>{
+    const result = await Productos.readCount();
+    return res.status(200).send(result);
+});
 
 router.post("/resgitrarProducto", async(req, res) =>{
     if(!req.body.nombre || !req.body.precio || !req.body.cantidadStock)
@@ -22,7 +27,7 @@ router.post("/resgitrarProducto", async(req, res) =>{
     if (!result)
         return res.status(400).send(result);
         
-    return res.status(200).send(result.comand);
+    return res.status(200).send(result);
 
 
     
