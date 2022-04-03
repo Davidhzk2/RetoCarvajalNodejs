@@ -8,7 +8,7 @@ import {ProductoService} from '../../services/producto.service';
   styleUrls: ['./listar-productos.component.css']
 })
 export class ListarProductosComponent implements OnInit {
-
+  products: any[] = [];
   productData:any;
   successMessage: String;
   errorMessage: String;
@@ -21,18 +21,17 @@ export class ListarProductosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  // this.successMessage = 'Lista de productos';
   this.product.listarProductos().subscribe(
-    (res)=>{
+    (res: any)=>{
       // console.log(res);
-      this.productData = res;
-      console.log(this.productData);
+      this.products = res;
+      console.log(this.products);
     },
-    (err)=>{
-      console.log(err.error);
-      this.errorMessage = err.error;
-      this.closeAlert();
-    }
+    // (err)=>{
+    //   console.log(err.error);
+    //   this.errorMessage = err.error;
+    //   this.closeAlert();
+    // }
   )
     
   }

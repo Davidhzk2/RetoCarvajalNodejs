@@ -4,6 +4,8 @@
 }
 .wrap-products{
     display: flex;
+    justify-content: flex-start;
+    flex-direction:start;
 }
 
 mat-card{
