@@ -11,7 +11,7 @@ export class ProductoService {
   constructor(private http: HttpClient) { 
     this.env = environment.APP_URL;
   }
-
+  
   listarProductos(){
     return this.http.get(this.env + "products/listarProductos");
   }

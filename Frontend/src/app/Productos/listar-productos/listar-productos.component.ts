@@ -12,26 +12,23 @@ export class ListarProductosComponent implements OnInit {
   productData:any;
   successMessage: String;
   errorMessage: String;
-  price : String;
   constructor(private  product: ProductoService, private router:Router) {
     this.productData = {};
     this.successMessage = '';
     this.errorMessage = '';
-    this.price = '1200';
    }
 
   ngOnInit(): void {
-  this.product.listarProductos().subscribe(
+   this.product.listarProductos().subscribe(
     (res: any)=>{
       // console.log(res);
       this.products = res;
       console.log(this.products);
     },
-    // (err)=>{
-    //   console.log(err.error);
-    //   this.errorMessage = err.error;
-    //   this.closeAlert();
-    // }
+    (err)=>{
+      console.log(err.error);
+      this.errorMessage = err.error;
+    }
   )
     
   }
