@@ -51,11 +51,8 @@ const searchBy = async(data)=>{
 
 const saveProduct = async (data) =>{
     try {
-        // return data.cantidadStock;
-
-        const result = await pool.query('INSERT INTO productos (nombre, precio, cantidadstock) VALUES ($1, $2, $3),'[data.nombre, data.precio, data.cantidadStock]);
-        // if(!result) return false;
-        return result.rows[0];
+        const result = await pool.query('INSERT INTO productos (nombre, precio, cantidadStock) VALUES ($1,$2,$3)', [data.nombre, data.precio, data.cantidadStock]);
+        return result.rows;
     } catch (err) {
         console.log("!"+ err);
         return result = err;
