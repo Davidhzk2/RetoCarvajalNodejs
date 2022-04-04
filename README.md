@@ -15,7 +15,7 @@ Para la instalación de la base de datos  debemos tener PostgreSQL
         	precio decimal  not null,
         	cantidadStock int not null 
    	 )`*
-- Tener en cuenta las credeciales (usuario, contraseña, puerto) de Postgres  para luego utilizarlas en la conexión con la base de datos del proyecto.
+- Tener en cuenta las credenciales (usuario, contraseña, puerto) de Postgres  para luego utilizarlas en la conexión con la base de datos del proyecto.
 
 #### Node js
 Tener un editor de codigo o una consola de comandos que nos permita trabajar con los los comandos npm y nodejs.
