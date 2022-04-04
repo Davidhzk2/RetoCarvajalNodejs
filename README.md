@@ -1,6 +1,8 @@
 # RetoCarvajalNodejs
 ### Información 
-Implementación del reto Carvajal 4.0 con NodeJS, Angular y PostgreSQL
+Implementación del reto Carvajal 4.0 con NodeJS, Angular y PostgreSQL.
+
+>Para la vista en el Frontend se utiza la libreria Angular Material la cual crea componentes basados en el diseño de Material Desing 
 ### Instalacion
 Se debe tener el proyecto en la maquina ya sea clonado o descargado del repositorio, tambien se debe contar con nodejs y Angular instalado 
 #### Base de datos
