@@ -25,7 +25,7 @@ export class AgregarProductosComponent implements OnInit {
     if(
       !this.productData.nombre ||
       !this.productData.precio ||
-      !this.productData.cantidad){
+      !this.productData.cantidadStock){
         console.log('Regsitro fallido: Data Incompleta');
         this.errorMessage = 'Regsitro fallido: Data Incompleta';
         this.closeAlert();
@@ -36,11 +36,22 @@ export class AgregarProductosComponent implements OnInit {
             console.log(res);
             this.productData = {};
             this.router.navigate(['/']);
+          },
+          (err: any)=>{
+            this.errorMessage = err.error;
+            this.closeAlert();
+            this.productData = {};
           }
         )
       }
   }
-  closeAlert(){}
-  closeX(){}
+  closeAlert() {
+    setTimeout(() => {
+      this.errorMessage = '';
+    }, 3000);
+  }
+  closeX() {
+    this.errorMessage = '';
+  }
 
 }
