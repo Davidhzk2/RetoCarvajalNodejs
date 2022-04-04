@@ -12,6 +12,9 @@ export class ProductoService {
     this.env = environment.APP_URL;
   }
   
+  registrarProductos(product: any){
+    return this.http.post(this.env + "products/resgitrarProducto", product);
+  }
   listarProductos(){
     return this.http.get(this.env + "products/listarProductos");
   }

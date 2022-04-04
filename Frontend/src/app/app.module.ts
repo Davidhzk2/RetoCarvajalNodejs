@@ -11,6 +11,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // Servicios 
 import {ProductoService} from './services/producto.service';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 // Tools
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
@@ -38,6 +40,7 @@ import { AgregarProductosComponent } from './Productos/agregar-productos/agregar
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [ProductoService],

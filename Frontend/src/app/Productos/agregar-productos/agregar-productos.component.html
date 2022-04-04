@@ -1,3 +1,24 @@
+<div class="col-12 col-lg-12" *ngIf="successMessage">
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <div class="alert-message">
+            {{ successMessage }}
+        </div>
+        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">X</span>
+        </button>
+    </div>
+</div>
+<div class="col-12 col-lg-12" *ngIf="errorMessage">
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <div class="alert-message">
+            {{ errorMessage }}
+        </div>
+        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">X</span>
+        </button>
+    </div>
+</div>
+<!-- Formulario -->
 <div class="form">
     <mat-card class="form_content">
         <mat-card-title>Agregar Producto</mat-card-title>
@@ -5,6 +26,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Nombre:</mat-label>
                 <input
+                [(ngModel)]="productData.nombre"
                 type="text"
                 matInput
                 placeholder="ej: computador"
@@ -13,15 +35,15 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Precio:</mat-label>
-                <input matInput placeholder="ej: 12000" required />
+                <input matInput [(ngModel)]="productData.precio" placeholder="ej: 12000" required />
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <input type="number" matInput placeholder="Cantidad" required />
+                <input type="number" matInput [(ngModel)]="productData.cantidad" placeholder="Cantidad" required />
                 <mat-label>Cantidad Stock</mat-label>
             </mat-form-field>
         </div>
         <mat-card-actions>
-            <button mat-raised-button>Agregar</button>
+            <button (click)="addProduct()" mat-raised-button>Agregar</button>
         </mat-card-actions>
     </mat-card>
 </div>
