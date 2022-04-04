@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 // importar componentes 
 import {ListarProductosComponent} from './Productos/listar-productos/listar-productos.component';
+import {AgregarProductosComponent} from './Productos/agregar-productos/agregar-productos.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ListarProductosComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'addProduct',
+    component:AgregarProductosComponent,
   }
 
 ];

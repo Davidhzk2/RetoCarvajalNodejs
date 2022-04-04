@@ -13,16 +13,21 @@ import {ProductoService} from './services/producto.service';
 
 // Tools
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatInputModule} from '@angular/material/input'; 
 
 // 
 import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AgregarProductosComponent } from './Productos/agregar-productos/agregar-productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarProductosComponent,
-    HeaderComponent
+    AgregarProductosComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
     NoopAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule
   ],
   providers: [ProductoService],

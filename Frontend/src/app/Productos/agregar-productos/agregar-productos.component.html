@@ -1,0 +1,27 @@
+<div class="form">
+    <mat-card class="form_content">
+        <mat-card-title>Agregar Producto</mat-card-title>
+        <div class="form_content_imputs">
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre:</mat-label>
+                <input
+                type="text"
+                matInput
+                placeholder="ej: computador"
+                required
+                />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Precio:</mat-label>
+                <input matInput placeholder="ej: 12000" required />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input type="number" matInput placeholder="Cantidad" required />
+                <mat-label>Cantidad Stock</mat-label>
+            </mat-form-field>
+        </div>
+        <mat-card-actions>
+            <button mat-raised-button>Agregar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
