@@ -35,6 +35,8 @@ export class AgregarProductosComponent implements OnInit {
           (res: any) =>{
             console.log(res);
             this.productData = {};
+            this.successMessage = "El producto se regsitro con exito!!";
+            this.closeAlert();
             this.router.navigate(['/']);
           },
           (err: any)=>{
