@@ -1,10 +1,29 @@
-
 <div class="container">
-    <div class="">
+    <div class="col-12 col-lg-12" *ngIf="successMessage">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <div class="alert-message">
+                {{ successMessage }}
+            </div>
+            <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">X</span>
+            </button>
+        </div>
+    </div>
+    <div class="col-12 col-lg-12" *ngIf="errorMessage">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div class="alert-message">
+                {{ errorMessage }}
+            </div>
+            <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">X</span>
+            </button>
+        </div>
+    </div>
+    <div class="section-header">
         <h2>Catalogo de productos</h2>
     </div>
-    <div *ngFor="let item of products; let i = index"  class="wrap-products" >
-        <mat-card class="card">
+    <div class="wrap-products" *ngFor="let item of products; let i = index"   >
+        <mat-card class="card-item">
             <img mat-card-image src="https://rukminim2.flixcart.com/image/416/416/jvb9tow0/puzzle/z/8/r/1-high-speed-stickerless-3-3-3-rubik-s-cube-3-3-cube-lovely-original-imafg86kysatuvu9.jpeg?q=70" alt="Porduct-Image+{{item.id}}">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
@@ -23,25 +42,5 @@
     </div>
 </div>
 
-<div class="col-12 col-lg-12" *ngIf="successMessage">
-    <div class="alert alert-success alert-dismissible" role="alert">
-        <div class="alert-message">
-            {{ successMessage }}
-        </div>
-        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">X</span>
-        </button>
-    </div>
-</div>
-<div class="col-12 col-lg-12" *ngIf="errorMessage">
-    <div class="alert alert-danger alert-dismissible" role="alert">
-        <div class="alert-message">
-            {{ errorMessage }}
-        </div>
-        <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">X</span>
-        </button>
-    </div>
-</div>
 
 

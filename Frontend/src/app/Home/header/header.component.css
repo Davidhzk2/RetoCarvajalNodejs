@@ -8,8 +8,9 @@
 a{
     color: white;
     padding: 8px;
+    text-decoration: none;
 }
 a:hover{
-    border: 0px 0px 1px 0px white;
+    border-bottom: 2px solid white;
     transition: ease-in-out;
 }

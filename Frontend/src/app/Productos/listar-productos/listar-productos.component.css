@@ -2,14 +2,21 @@
     width: 90%;
     margin: auto;
 }
+.section-header h2{
+    font-size: 26px;
+    font-weight: 300;
+    color: #666;
+}
 .wrap-products{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction:start;
+    float: left;
+    /* display: flex; */
+    flex-wrap: wrap;
 }
 
-mat-card{
-    width: 20%;
+.card-item{
+    max-width: 250px;
+    position:static;
+    width: 100%;
     margin: 5px;
     border: 1px solid rgba(39, 39, 39, 0.616);
 }
