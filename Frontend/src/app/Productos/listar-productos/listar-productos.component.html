@@ -27,10 +27,10 @@
             <img mat-card-image src="https://rukminim2.flixcart.com/image/416/416/jvb9tow0/puzzle/z/8/r/1-high-speed-stickerless-3-3-3-rubik-s-cube-3-3-cube-lovely-original-imafg86kysatuvu9.jpeg?q=70" alt="Porduct-Image+{{item.id}}">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>{{item.nombre}}</mat-card-title>
-                <mat-card-subtitle>{{item.precio}}</mat-card-subtitle>
+                <mat-card-title class="item-name">{{item.nombre}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
+                <span class="price item-price">{{item.precio}}</span>
                 <p>{{item.cantidadstock}}</p>
             </mat-card-content>
             <mat-card-actions>
